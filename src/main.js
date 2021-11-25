@@ -1,15 +1,15 @@
 
-// import { myFunction } from './lib/index.js';
+import { myFunction } from './lib/index.js';
 
-// import { changeRoute } from '.src/route.js';
+import { changeRoute } from './lib/route.js';
 
-// myFunction();
+myFunction();
 
-// window.addEventListener('hashchange', ()=>{
-//   changeRoute(window.location.hash)    
-// })
+window.addEventListener('hashchange', ()=>{
+  changeRoute(window.location.hash)    
+})
 
 
-// window.addEventListener('load', () =>{
-//   changeRoute(window.location.hash)
-// });
+window.addEventListener('load', () =>{
+  changeRoute(window.location.hash)
+});
