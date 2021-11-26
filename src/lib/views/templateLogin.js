@@ -1,5 +1,7 @@
-export const login = () => {
 
+import { loginWithGoogle } from '../firebase.js';
+
+export const login = () => {
   const containerLogin = document.createElement('section');
   containerLogin.className = 'view-login';
   const loginHTML =   
@@ -9,11 +11,9 @@ export const login = () => {
     <button class='login-btn' id='login-btn'><img class='logo-google' src='../lib/images/logo_google.png' alt='logo_google'></a> INGRESA CON GOOGLE</button>
     `
   containerLogin.innerHTML = loginHTML;
-  //containerRoot.appendChild(containerLogin);
-
-  //containerLogin.querySelector('.login-btn').addEventListener('click', () => {
-
- // });
+  containerLogin.querySelector('.login-btn').addEventListener('click', () => {
+    loginWithGoogle();
+  });
   return containerLogin; 
 };
 

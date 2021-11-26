@@ -4,8 +4,8 @@ export const wall = () =>{
   containerWall.className = 'view-wall';
   const wallHTML =
    `<header class="header"><img class="logo-header" src="../lib/images/logo.png">Beer Up</header>
-    <button id="post">Crea tu post aquí.</button>
-    <section>
+    <button class="postHere" id="post">Crea tu post aquí.</button>
+    <section class="container-post">
       <div id="wall-post"></div>
     </section>
    `

@@ -6,7 +6,7 @@ import { post } from "./views/templatePost.js";
 export const changeRoute = (hash) => {
   const containerRoot = document.getElementById('root');
   containerRoot.innerHTML = '';
-  if (hash === '#/') {
+  if (hash === '#/' || hash === '') {
     containerRoot.appendChild(login());
   } else if (hash === '#/login') {
     containerRoot.appendChild(login());
