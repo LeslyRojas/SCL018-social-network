@@ -74,21 +74,24 @@ body{
     font-size: 4rem;
     justify-content: center;
     margin-top: 2rem;
+    font-style: normal;
+    font-weight: normal;
     
 }
 
 .logo-header{
     margin-right: 10px;
+    margin-top: .5rem;
     width: 3.5rem;
-    right: 3rem;
+    height: 3.5rem;
 }
 
 .postHere{
     background-color: rgba(196, 196, 196, 0.3);
     color: rgba(193, 191, 191, 1);
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-top: 2.5rem;
-    width: 30rem;
+    width: 32rem;
     height: 4rem;
     font-size: 1.8rem;
     border: none;
@@ -96,12 +99,59 @@ body{
     border-radius: 10px;
 }
 
-.container-post{
+.container-post {
     background-color: rgba(196, 196, 196, 0.3);
     border-radius: 10px;
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-top: 2rem;
-    width: 30rem;
+    width: 32rem;
     height: 40rem;
 
+}
+
+
+/*-----------post----------------*/
+
+.post{
+    background-color: rgba(196, 196, 196, 0.3);
+    border-radius: 10px;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 32rem;
+    height: 40rem;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.close-post{
+    margin-left: 27rem;
+    margin-top: 1.5rem;
+}
+
+.create-post{
+    display: flex;
+    justify-content: center;
+    background-color:#ffffff;
+    color: black;
+    border-radius: 10px;
+    font-size: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 28rem;
+    height: 24rem;
+    border: none;
+}
+
+.create-post-btn{
+    background-color: rgb(54, 52, 52);
+    color: white;
+    border-radius: 10px;
+    margin-left: 9rem;
+    margin-top: 2.5rem;
+    width: 15rem;
+    height: 3rem;
+    font-size: 2rem;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
 }
