@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js';
 import { getAuth, GoogleAuthProvider, signOut, onAuthStateChanged, signInWithPopup,  } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js';
-import { getFirestore, collection, addDoc, getDocs, Timestamp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, Timestamp, query, orderBy, onSnapshot, doc, deleteDoc} from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBi8e3RwTgXYw6qs6jQcl8nf73NBX11Fzs',
@@ -14,7 +14,7 @@ const firebaseConfig = {
   
   // ----------Inicializando Firebase----------
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore(app);
 const user = auth.currentUser;
@@ -63,7 +63,7 @@ export const onAuth = () => {
 };
 
 // ----------Agregar data----------
-export const addData = async( description ) => {
+export const addData = async(description) => {
   const docRef = await addDoc(collection(db,'publication'), {
     post : description,
     userId : auth.currentUser.uid,
@@ -73,3 +73,22 @@ export const addData = async( description ) => {
 }
 
 // ----------Leer data----------
+export const readData = (post, callback) => {
+  const q = query(collection(db, post), orderBy('datePosted', 'desc'));
+  onSnapshot(q, (querySnapshot) => {
+    const dataPost = [];
+    querySnapshot.forEach((document) => {
+      const element = {};
+      element.id = document.id;
+      element.data = document.data();
+      dataPost.push({ element });
+    }); 
+    callback(dataPost);
+ }); 
+
+}
+
+// ----------borrar data----------
+export const deletePost = async(id) => {
+  await deleteDoc(doc(db, 'publication', id));
+};

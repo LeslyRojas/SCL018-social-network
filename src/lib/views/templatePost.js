@@ -27,7 +27,7 @@ export const post = () => {
     }else {
         addData(description)};
         window.location.hash = '#/wall';
-      console.log(description)
+      //console.log(description)
    });
    return containerPost
 

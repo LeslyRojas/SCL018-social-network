@@ -1,4 +1,5 @@
 import { logOut } from "../firebase.js";
+import { showPost } from "./showPost.js";
 
 export const wall = () =>{
 
@@ -12,12 +13,13 @@ export const wall = () =>{
    `<header class='header'><img class='logo-header' src='../lib/images/logo.png'> BEER UP</header>
     <button type='button' class='logOut-btn' id='logOut-btn'>Salir</button>
     <button class='postHere' id='post-btn'>Crea tu post aquí.</button>
-    <section class='container-post'>
-      <div id='wall-post'></div>
+    <section class='container-post' id='containerPost'>
     </section>
    `
   containerWall.innerHTML = wallHTML;
   containerWall.appendChild(postSection);
+  showPost();
+
   const postHereBtn = containerWall.querySelector('.postHere');
   postHereBtn.addEventListener('click', ()=>{
     window.location.hash = '#/post';
