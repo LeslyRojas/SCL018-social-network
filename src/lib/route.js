@@ -1,7 +1,6 @@
-import { login } from "./views/templateLogin.js";
-import { wall } from "./views/templateWall.js";
-import { post } from "./views/templatePost.js";
-
+import { login } from './views/templateLogin.js';
+import { wall } from './views/templateWall.js';
+import { post } from './views/templatePost.js';
 
 export const changeRoute = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -15,4 +14,4 @@ export const changeRoute = (hash) => {
   } else if (hash === '#/post') {
     containerRoot.appendChild(post());
   }
-}
+};
